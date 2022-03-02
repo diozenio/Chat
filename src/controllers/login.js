@@ -17,7 +17,7 @@ router.post("/authenticate", async (req, res) => {
     return res.status(400).send({ error: "Invalid password" });
   }
 
-  res.send("Olá " + user.username);
+  res.redirect('/chat');
 });
 
 module.exports = (app) => app.use("/", router);

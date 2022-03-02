@@ -6,19 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script type="text/javascript" src="js/jquery.js"></script>
     <script src="/socket.io/socket.io.js"></script>
-    <title>Login</title>
+    <title>Chat</title>
   </head>
   <body>
-    <h1>Login</h1>
-    <form method="post" action="/authenticate">
-      <p>Email</p>
-      <input required type="email" name="email" />
+    <h1>Chat</h1>
+    <form id="form">
+      <p>Mensagem</p>
+      <input id="input" required type="text" name="mensagem" />
       <br />
-      <p>senha</p>
-      <input required type="password" name="password" />
-      <br />
-      <button>enviar</button>
+      <button type="submit">Enviar</button>
     </form>
-    <a href="/register">Cadastrar</a>
+    <ul id="messages">
+
+    </ul>
+    <script type="text/javascript" src="js/index.js"></script>
   </body>
 </html>

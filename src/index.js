@@ -17,13 +17,20 @@ app.get("/register", (req, res) => {
   res.render(__dirname + "/views/register.ejs/");
 });
 
+app.get("/chat", (req, res) => {
+  res.render(__dirname + "/views/chat.ejs/");
+});
+
 require("./controllers/register")(app);
 require("./controllers/login")(app);
 
-io.on("connection", (client) => {
-  client.on("message", (mensagem) => {
-    console.log(message);
-    client.emit("message", "Olá cliente, aqui é o servidor!");
+io.on("connection", (socket) => {
+  console.log(`a user connected ${socket.nome}`);
+  socket.on('chat message', (msg, author) => {
+    io.emit('chat message', msg, author);
+  });
+  socket.on("disconnect", () => {
+    console.log("user disconnected");
   });
 });
 
