@@ -16,4 +16,6 @@ app.post('/', (req, res)=>{
 
 require('./controllers/authController')(app);
 
-app.listen(3000);
+app.listen(3000, ()=> {
+    console.log("Servidor sendo executado em: http://localhost:3000/");
+});
