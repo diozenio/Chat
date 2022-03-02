@@ -1,8 +1,8 @@
 const express = require("express");
 
 const app = express();
-const http = require("http").Server(app);
-const io = require("socket.io")(http);
+const server = require('http').createServer(app);
+const io = require("socket.io")(server);
 
 app.use(express.urlencoded({ extended: true }));
 
@@ -17,6 +17,6 @@ app.get("/register", (req, res) => {
 require("./controllers/register")(app);
 require("./controllers/login")(app);
 
-http.listen(3000, () => {
+server.listen(3000, () => {
   console.log("Servidor sendo executado em: http://localhost:3000/");
 });
