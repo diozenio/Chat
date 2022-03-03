@@ -21,13 +21,15 @@ app.get("/register", (req, res) => {
   res.render(__dirname + "/views/register.ejs/");
 });
 
-// app.get("/chat", (req, res) => {
-//   res.render(__dirname + "/views/chat.ejs/");
-// });
+const authMiddleware = require('./middlewares/auth');
+app.use("/chat", authMiddleware);
+
+app.get("/chat", (req, res) => {
+  res.render(__dirname + "/views/chat.ejs/");
+});
 
 require("./controllers/register")(app);
 require("./controllers/login")(app);
-require("./controllers/chat")(app);
 
 io.on("connection", (socket) => {
   console.log(`a user connected ${socket.nome}`);
