@@ -18,7 +18,7 @@ module.exports = (req, res, next) => {
     if (err) {
         return res.redirect('/');
     }
-    req.userId = decoded.id;
+    req.username = decoded.username;
     return next();
   });
 };

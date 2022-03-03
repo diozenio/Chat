@@ -25,7 +25,7 @@ router.post("/authenticate", async (req, res) => {
     return res.status(400).send({ error: "Invalid password" });
   }
 
-  const token = generateToken({ id: user.id });
+  const token = generateToken({ id: user.id, username: user.username });
   res.cookie('token', 'Bearer '+token);
   res.redirect('/chat');
 });

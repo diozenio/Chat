@@ -1,18 +1,20 @@
-var getNome = function () {
-  var nome;
+// var getNome = function () {
+//   var nome;
 
-  while (true) {
-    nome = prompt("Digite o seu nome: ");
+//   while (true) {
+//     nome = prompt("Digite o seu nome: ");
 
-    if (nome != null && nome.length > 0) {
-      break;
-    }
-  }
+//     if (nome != null && nome.length > 0) {
+//       break;
+//     }
+//   }
 
-  return nome;
-};
+//   return nome;
+// };
 
-var nome = getNome();
+// var nome = getNome();
+
+const username = document.getElementById("username").innerHTML;
 
 var socket = io();
 
@@ -23,7 +25,7 @@ var input = document.getElementById("input");
 form.addEventListener("submit", function (e) {
   e.preventDefault();
   if (input.value) {
-    socket.emit("chat message", input.value, nome);
+    socket.emit("chat message", input.value, username);
     input.value = "";
   }
 });

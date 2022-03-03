@@ -14,7 +14,7 @@ app.use(cookieParser());
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
-  res.render(__dirname + "/views/index.ejs", { text: "Hey" });
+  res.render(__dirname + "/views/index.ejs");
 });
 
 app.get("/register", (req, res) => {
@@ -25,7 +25,7 @@ const authMiddleware = require('./middlewares/auth');
 app.use("/chat", authMiddleware);
 
 app.get("/chat", (req, res) => {
-  res.render(__dirname + "/views/chat.ejs/");
+  res.render(__dirname + "/views/chat.ejs/", { username: req.username });
 });
 
 require("./controllers/register")(app);
