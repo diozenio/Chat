@@ -3,10 +3,14 @@ const express = require("express");
 const app = express();
 const http = require("http").Server(app);
 const io = require("socket.io")(http);
+const cookieParser = require('cookie-parser');
 
 app.use(express.urlencoded({ extended: true }));
 app.set("views", "./views");
 app.set("view engine", "ejs");
+app.use(cookieParser());
+
+  
 app.use(express.static("public"));
 
 app.get("/", (req, res) => {
