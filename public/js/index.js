@@ -31,8 +31,9 @@ form.addEventListener("submit", function (e) {
 });
 
 socket.on("chat message", function (msg, author) {
-  var item = document.createElement("li");
-  item.textContent = author + " enviou: " + msg;
+  var item = document.createElement("p");
+  item.textContent = author + " enviou: " + msg ;
+  item.setAttribute('class', 'mensagem');
   messages.appendChild(item);
   window.scrollTo(0, document.body.scrollHeight);
 });

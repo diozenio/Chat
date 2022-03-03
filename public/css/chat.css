@@ -1,0 +1,41 @@
+h1#username {
+  color: #888;
+  font-size: 20px;
+}
+
+.container {
+  padding: 0 20px;
+  justify-content: space-between;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+h1.title {
+  color: #222;
+  font-size: 20px;
+}
+
+header {
+  display: flex;
+  padding: 20px 0;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+}
+
+input#input {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  padding: 10px;
+}
+
+.mensagem {
+  padding: 10px;
+}
