@@ -6,6 +6,8 @@ const io = require("socket.io")(http);
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
 
+let port = process.env.PORT || 3000;
+
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
@@ -44,6 +46,4 @@ io.on("connection", (socket) => {
   });
 });
 
-http.listen(3000, () => {
-  console.log("Servidor sendo executado em: http://localhost:3000/");
-});
+http.listen(port);
