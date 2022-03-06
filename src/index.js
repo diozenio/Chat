@@ -8,7 +8,6 @@ const io = require("socket.io")(http);
 
 let port = process.env.PORT || 3000;
 
-
 app.use(cors());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: true }));
