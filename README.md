@@ -13,6 +13,10 @@ Sistema de login e registro de usuários, com acesso à uma sala de bate-papo do
 - Envio de mensagens
 
 ---
+## Deploy
+[![Heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)](https://chat-messages-online.herokuapp.com/)
+
+---
 ## Requisitos
 
 Para o desenvolvimento, você precisará instalar o Node.js e um gerenciador de pacotes, Yarn ou Npm. 
