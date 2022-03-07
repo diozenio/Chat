@@ -45,4 +45,6 @@ io.on("connection", (socket) => {
   });
 });
 
-http.listen(port);
+http.listen(port, ()=>{
+  console.log("O servidor está rodando em: http://localhost:3000");
+});
